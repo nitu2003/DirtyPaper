@@ -36,3 +36,8 @@ jobs:
                   ./paper build
             - name: Build javadocs
               run: mvn -pl Paper-API,Paper-MojangAPI -am javadoc:javadoc
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                  name: dirty-paper
+                  path: ./*paper*
